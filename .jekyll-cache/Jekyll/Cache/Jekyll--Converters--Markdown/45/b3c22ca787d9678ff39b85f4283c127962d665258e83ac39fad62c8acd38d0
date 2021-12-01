@@ -1,4 +1,4 @@
-I"6L<p>A variety of common markup showing how the theme styles them.</p>
+I"FM<p>A variety of common markup showing how the theme styles them.</p>
 
 <h1 id="header-one">Header one</h1>
 
@@ -597,7 +597,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/publications/" rel="permalink">Sample Page</a>
+        <a href="/CV/" rel="permalink">CV</a>
       
     </h2>
     
@@ -659,6 +659,21 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/terms/" rel="permalink">Terms and Privacy Policy</a>
+      
+    </h2>
+    
+
+
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/CV/" rel="permalink">dfasdf</a>
       
     </h2>
     
