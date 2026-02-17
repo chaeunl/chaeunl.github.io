@@ -102,10 +102,10 @@
     }
   ],
   "talks": [
-    { "text": "<strong>Chaeun Lee</strong>, \"Towards Efficient AI Agents: Models, Quantization, and Tools\", Invited talk at Supergate Inc., 2025.", "link": "https://drive.google.com/file/d/1l1s1NpzKry8kM05S7meB1fP59zcduv4S/view?usp=sharing" },
-    { "text": "<strong>Chaeun Lee</strong>, \"Synthetic data generation with text-to-image diffusion models\", Invited Talk at Hanyang Univ., 2025.", "link": "https://docs.google.com/presentation/d/11pNQO6b9Ypeoq9ZwXd4-T9MPVLTp3WO0/edit?usp=drive_link&ouid=105671550362186278482&rtpof=true&sd=true" },
-    { "text": "<strong>Chaeun Lee</strong>, \"Recent advances in quantization for deep learning models from algorithms to system level\", <strong>Main Tutorial</strong> at <em>International Conference on Electronics, Information, and Communication (ICEIC)</em>, 2024.", "link": "https://drive.google.com/file/d/1Rqxnc_Vn_LzX39XkwYa6kT9Wj8dxY3mw/view?usp=sharing" },
-    { "text": "<strong>Chaeun Lee</strong>, \"Statistical Modeling-based Simulators for Analog Neural Networks\", <strong>Main Tutorial</strong> at <em>International SoC Design Conference (ISOCC)</em>, 2021.", "link": "https://drive.google.com/file/d/1bISmkYksHhzLsPA1j0ExX5v3RePVcOnQ/view?usp=sharing" }
+    { "text": "<strong>Chaeun Lee</strong>, \"Towards Efficient AI Agents: Models, Quantization, and Tools\", Invited talk at Supergate Inc., 2025.", "link": "https://drive.google.com/file/d/1l1s1NpzKry8kM05S7meB1fP59zcduv4S/view?usp=sharing", "preview": "assets/images/publications/talk1.jpg" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Synthetic data generation with text-to-image diffusion models\", Invited Talk at Hanyang Univ., 2025.", "link": "https://drive.google.com/file/d/1XfARp1rJePt3n8YKZhwCfWirh1H8CTxZ/view?usp=sharing", "preview": "assets/images/publications/talk2.jpg" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Recent advances in quantization for deep learning models from algorithms to system level\", <strong>Main Tutorial</strong> at <em>International Conference on Electronics, Information, and Communication (ICEIC)</em>, 2024.", "link": "https://drive.google.com/file/d/1Rqxnc_Vn_LzX39XkwYa6kT9Wj8dxY3mw/view?usp=sharing", "preview": "assets/images/publications/talk3.jpg" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Statistical Modeling-based Simulators for Analog Neural Networks\", <strong>Main Tutorial</strong> at <em>International SoC Design Conference (ISOCC)</em>, 2021.", "link": "https://drive.google.com/file/d/1bISmkYksHhzLsPA1j0ExX5v3RePVcOnQ/view?usp=sharing", "preview": "assets/images/publications/talk4.jpg" }
   ],
   "awards": [
     "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <strong>Best Paper Award granted by SK Hynix</strong> at International SoC Design Conference (ISOCC), 2018."
