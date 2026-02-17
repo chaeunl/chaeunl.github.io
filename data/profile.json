@@ -75,6 +75,11 @@
   },
   "experience": [
     {
+      "title": "AI Research Engineer at KRAFTON AI",
+      "period": "Jul. 2025 -",
+      "description": "Researching and developing LLM-based game agents. Working on LLM serving infrastructure for game AI applications."
+    },
+    {
       "title": "NPU/GPU Performance Engineer at Rebellions (M&A SAPEON Inc.)",
       "period": "Dec. 2024 - Jul. 2025",
       "description": "Evaluated NPU/GPU performance for LLM serving frameworks and developed NPU applications. Conducted research on synthetic data generation using text-guided diffusion models."
