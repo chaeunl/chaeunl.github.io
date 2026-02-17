@@ -214,22 +214,26 @@
 
       const pubs = profile.publications;
       const sections = [
+        { id: 'talks', label: 'Talks', items: profile.talks },
         { id: 'preprints', label: 'Preprints', items: pubs.preprints },
         { id: 'journals', label: 'Journals', items: pubs.journals },
         { id: 'conferences', label: 'Conferences', items: pubs.conferences },
         { id: 'patents', label: 'Patents', items: pubs.patents },
-        { id: 'talks', label: 'Talks', items: profile.talks.map(t => ({ text: t })) },
       ];
 
       function renderItem(item) {
         const text = typeof item === 'string' ? item : item.text;
         const preview = typeof item === 'object' ? item.preview : null;
-        const isPdf = preview && preview.endsWith('.pdf');
-        const thumb = preview
-          ? (isPdf
-              ? `<a href="${escapeHTML(preview)}" target="_blank"><div class="pub-no-thumb">PDF</div></a>`
-              : `<img class="pub-thumb" src="${escapeHTML(preview)}" alt="preview">`)
-          : `<div class="pub-no-thumb">No preview</div>`;
+        const link = typeof item === 'object' ? item.link : null;
+        let thumb;
+        if (preview) {
+          thumb = `<img class="pub-thumb" src="${escapeHTML(preview)}" alt="preview">`;
+        } else {
+          thumb = `<div class="pub-no-thumb">No preview</div>`;
+        }
+        if (link) {
+          thumb = `<a href="${escapeHTML(link)}" target="_blank">${thumb}</a>`;
+        }
         return `<li class="pub-item">${thumb}<div class="pub-text">${text}</div></li>`;
       }
 

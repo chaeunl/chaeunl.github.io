@@ -51,21 +51,21 @@
   ],
   "publications": {
     "preprints": [
-      { "text": "<strong>Chaeun Lee</strong> and Seyoung Kim, \"SEMULATOR: Emulating the Dynamics of Crossbar Array-based Analog Neural System with Regression Neural Network,\" arXiv, 2021.", "preview": "assets/images/publications/semulator.jpg" }
+      { "text": "<strong>Chaeun Lee</strong> and Seyoung Kim, \"SEMULATOR: Emulating the Dynamics of Crossbar Array-based Analog Neural System with Regression Neural Network,\" arXiv, 2021.", "preview": "assets/images/publications/semulator.jpg", "link": "https://arxiv.org/abs/2101.07864" }
     ],
     "journals": [
-      { "text": "<strong>Chaeun Lee</strong>, Kyungmi Noh, Wonjae Ji, Tayfun Gokmen and Seyoung Kim, \"Impact of Asymmetric Weight Update on Neural Networks Training with Tiki-taka Algorithm,\" <em>Frontiers in Neuroscience</em>, 2022 (IF=4.7).", "preview": "assets/images/publications/impact_of.webp" },
-      { "text": "Hyunjung Kwak, Chuljun Lee, <strong>Chaeun Lee</strong>, Kyungmi Noh and Seyoung Kim, \"Experimental Measurement of Ungated Channel Region Conductance in a Multi-terminal, Metal Oxide-based ECRAM,\" <em>Semiconductor Science and Technology</em>, 2021 (IF=2.36)." }
+      { "text": "<strong>Chaeun Lee</strong>, Kyungmi Noh, Wonjae Ji, Tayfun Gokmen and Seyoung Kim, \"Impact of Asymmetric Weight Update on Neural Networks Training with Tiki-taka Algorithm,\" <em>Frontiers in Neuroscience</em>, 2022 (IF=4.7).", "preview": "assets/images/publications/impact_of.webp", "link": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2021.767953/full" },
+      { "text": "Hyunjung Kwak, Chuljun Lee, <strong>Chaeun Lee</strong>, Kyungmi Noh and Seyoung Kim, \"Experimental Measurement of Ungated Channel Region Conductance in a Multi-terminal, Metal Oxide-based ECRAM,\" <em>Semiconductor Science and Technology</em>, 2021 (IF=2.36).", "link": "https://iopscience.iop.org/article/10.1088/1361-6641/ac25c8/meta" }
     ],
     "conferences": [
-      { "text": "Jiwoong Park*, <strong>Chaeun Lee</strong>*, Yongseok Choi, Sein Park, Deokki Hong, and Jungwook Choi, \"Enhancing Generalization in Data-free Quantization via Mixup-class Prompting,\" <em>ICCV BiVision Workshop (ICCVW)</em>, 2025 (*=equal contribution).", "preview": "assets/images/publications/enhancing.png" },
+      { "text": "Jiwoong Park*, <strong>Chaeun Lee</strong>*, Yongseok Choi, Sein Park, Deokki Hong, and Jungwook Choi, \"Enhancing Generalization in Data-free Quantization via Mixup-class Prompting,\" <em>ICCV BiVision Workshop (ICCVW)</em>, 2025 (*=equal contribution).", "preview": "assets/images/publications/enhancing.png", "link": "https://arxiv.org/abs/2507.21947" },
       { "text": "Jiwoong Park, <strong>Chaeun Lee</strong>, Yongseok Choi, and Jungwook Choi, \"Data-scarce quantization using Stable Diffusion,\" <em>Autumn Annual Conference of IEIE</em>, 2024 (domestic)." },
-      { "text": "<strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"An RRAM-based Analog Neuron Design for the Weighted Spiking Neural Network,\" <em>International SoC Design Conference (ISOCC)</em>, 2019." },
-      { "text": "<strong>Chaeun Lee</strong>, Jaehyun Kim, Jihun Kim, Jaehyun Kim, and Kiyoung Choi, \"Fast Simulation Method for Analog Deep Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2019." },
-      { "text": "Jaehyun Kim*, <strong>Chaeun Lee</strong>*, Jihun Kim, Yumin Kim, Cheol Seong Hwang and Kiyoung Choi, \"VCAM: Variation Compensation Technique through Activation Matching,\" <em>International Symposium on Low Power Electronics and Design (ISLPED)</em>, 2019 (*=equal contribution).", "preview": "assets/images/publications/vcam.jpg" },
+      { "text": "<strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"An RRAM-based Analog Neuron Design for the Weighted Spiking Neural Network,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.", "link": "https://ieeexplore.ieee.org/document/9078507/" },
+      { "text": "<strong>Chaeun Lee</strong>, Jaehyun Kim, Jihun Kim, Jaehyun Kim, and Kiyoung Choi, \"Fast Simulation Method for Analog Deep Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.", "link": "https://ieeexplore.ieee.org/document/9078516/" },
+      { "text": "Jaehyun Kim*, <strong>Chaeun Lee</strong>*, Jihun Kim, Yumin Kim, Cheol Seong Hwang and Kiyoung Choi, \"VCAM: Variation Compensation Technique through Activation Matching,\" <em>International Symposium on Low Power Electronics and Design (ISLPED)</em>, 2019 (*=equal contribution).", "preview": "assets/images/publications/vcam.jpg", "link": "https://ieeexplore.ieee.org/document/8824902/" },
       { "text": "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Deep Neural Network Training with Random Search,\" <em>SoC Conference</em>, 2019 (domestic)." },
       { "text": "Seonghyun Jeong, <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"A Biologically Plausible Deep Learning Model with DBN and A Shallow Classifier,\" <em>Institute of Semiconductor Engineers Conference</em>, 2018 (domestic)." },
-      { "text": "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2018." }
+      { "text": "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2018.", "link": "https://ieeexplore.ieee.org/document/8649929" }
     ],
     "patents": [
       { "text": "<strong>Chaeun Lee</strong>, Deokki Hong, \"Method and Device for Modularized Compression of Machine Learning Model,\" Under examination." },
@@ -102,10 +102,10 @@
     }
   ],
   "talks": [
-    "<strong>Chaeun Lee</strong>, \"Towards Efficient AI Agents: Models, Quantization, and Tools\", Invited talk at Supergate Inc., 2025.",
-    "<strong>Chaeun Lee</strong>, \"Synthetic data generation with text-to-image diffusion models\", Invited Talk at Hanyang Univ., 2025.",
-    "<strong>Chaeun Lee</strong>, \"Recent advances in quantization for deep learning models from algorithms to system level\", <strong>Main Tutorial</strong> at <em>International Conference on Electronics, Information, and Communication (ICEIC)</em>, 2024.",
-    "<strong>Chaeun Lee</strong>, \"Statistical Modeling-based Simulators for Analog Neural Networks\", <strong>Main Tutorial</strong> at <em>International SoC Design Conference (ISOCC)</em>, 2021."
+    { "text": "<strong>Chaeun Lee</strong>, \"Towards Efficient AI Agents: Models, Quantization, and Tools\", Invited talk at Supergate Inc., 2025.", "link": "https://drive.google.com/file/d/1l1s1NpzKry8kM05S7meB1fP59zcduv4S/view?usp=sharing" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Synthetic data generation with text-to-image diffusion models\", Invited Talk at Hanyang Univ., 2025.", "link": "https://docs.google.com/presentation/d/11pNQO6b9Ypeoq9ZwXd4-T9MPVLTp3WO0/edit?usp=drive_link&ouid=105671550362186278482&rtpof=true&sd=true" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Recent advances in quantization for deep learning models from algorithms to system level\", <strong>Main Tutorial</strong> at <em>International Conference on Electronics, Information, and Communication (ICEIC)</em>, 2024.", "link": "https://drive.google.com/file/d/1Rqxnc_Vn_LzX39XkwYa6kT9Wj8dxY3mw/view?usp=sharing" },
+    { "text": "<strong>Chaeun Lee</strong>, \"Statistical Modeling-based Simulators for Analog Neural Networks\", <strong>Main Tutorial</strong> at <em>International SoC Design Conference (ISOCC)</em>, 2021.", "link": "https://drive.google.com/file/d/1bISmkYksHhzLsPA1j0ExX5v3RePVcOnQ/view?usp=sharing" }
   ],
   "awards": [
     "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <strong>Best Paper Award granted by SK Hynix</strong> at International SoC Design Conference (ISOCC), 2018."
