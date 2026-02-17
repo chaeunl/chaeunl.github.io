@@ -64,13 +64,47 @@
     nav a.nav-link:hover { color: #fff; }
     nav a.nav-link.active { color: #fff; }
 
+    /* Sub-nav */
+    .sub-nav {
+      background: var(--accent);
+      position: sticky;
+      top: 48px;
+      z-index: 99;
+    }
+    .sub-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .sub-nav a {
+      display: block;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .sub-nav a:hover, .sub-nav a.active {
+      color: #fff;
+    }
+
     /* Container */
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
-    section { padding: 48px 0; }
+    section {
+      padding: 48px 0;
+      scroll-margin-top: 100px;
+    }
     section + section { border-top: 1px solid var(--border); }
     .section-title {
       font-size: 1.3rem;
@@ -253,6 +287,9 @@
       .skills-grid { grid-template-columns: 1fr; }
       .edu-header, .exp-header, .ri-header { flex-direction: column; gap: 2px; }
       nav .nav-inner { flex-direction: column; gap: 0; }
+      .sub-nav { top: 82px; }
+      .sub-nav a { padding: 8px 14px; font-size: 0.75rem; }
+      section { scroll-margin-top: 140px; }
     }
 
     html { scroll-behavior: smooth; }
@@ -270,6 +307,16 @@
       </ul>
     </div>
   </nav>
+
+  <div class="sub-nav">
+    <div class="sub-nav-inner" id="sub-nav">
+      <a href="#research-interests">Research Interests</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </div>
 
   <div class="container">
     <section id="research-interests"></section>
@@ -366,6 +413,21 @@
       // Footer
       document.getElementById('footer').innerHTML =
         `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;
+
+      // Highlight active sub-nav on scroll
+      const subNavLinks = document.querySelectorAll('.sub-nav a');
+      const sectionIds = ['research-interests', 'education', 'experience', 'awards', 'skills'];
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            subNavLinks.forEach(l => l.classList.remove('active'));
+            const link = document.querySelector(`.sub-nav a[href="#${entry.target.id}"]`);
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sectionIds.forEach(id => observer.observe(document.getElementById(id)));
     }
     render();
   </script>

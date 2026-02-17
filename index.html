@@ -136,6 +136,41 @@
       max-width: 720px;
     }
 
+    /* Recent Posts */
+    .recent-post {
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .recent-post:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .recent-post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .recent-post-title { font-size: 1rem; font-weight: 600; color: var(--dark); }
+    .recent-post-date { font-size: 0.85rem; color: var(--light-gray); white-space: nowrap; }
+    .recent-post-summary { font-size: 0.88rem; color: var(--gray); margin-top: 4px; }
+    .view-all {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .view-all:hover { text-decoration: underline; }
+
     /* Footer */
     footer {
       background: var(--navy);
@@ -181,6 +216,7 @@
         I am a researcher and engineer with experience spanning AI simulation, large-scale model optimization, and hardware-aware efficient model design. My work bridges the gap between deep learning algorithms and their practical deployment on specialized hardware, from analog memory-based systems to modern NPUs. I am particularly interested in synthetic data generation with diffusion models, model quantization, and AI-driven simulation.
       </p>
     </section>
+    <section id="recent-posts"></section>
   </div>
 
   <footer id="footer"></footer>
@@ -197,7 +233,10 @@
     }
 
     async function render() {
-      const profile = await loadJSON('data/profile.json');
+      const [profile, posts] = await Promise.all([
+        loadJSON('data/profile.json'),
+        loadJSON('data/posts.json'),
+      ]);
       document.title = profile.name;
 
       document.getElementById('hero').innerHTML = `
@@ -213,11 +252,27 @@
             <a href="${escapeHTML(profile.links.scholar)}" target="_blank">Google Scholar</a>
             <span class="sep">|</span>
             <a href="${escapeHTML(profile.links.linkedin)}" target="_blank">LinkedIn</a>
-            <span class="sep">|</span>
-            <a href="${escapeHTML(profile.links.cv)}" target="_blank">CV</a>
           </div>
         </div>
       `;
+
+      // Recent Posts
+      const recent = posts.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+      if (recent.length > 0) {
+        document.getElementById('recent-posts').innerHTML = `
+          <h2 class="section-title">Recent Posts</h2>
+          ${recent.map(p => `
+            <a class="recent-post" href="post.html?slug=${encodeURIComponent(p.slug)}">
+              <div class="recent-post-header">
+                <span class="recent-post-title">${escapeHTML(p.title)}</span>
+                <span class="recent-post-date">${escapeHTML(p.date)}</span>
+              </div>
+              <p class="recent-post-summary">${escapeHTML(p.summary)}</p>
+            </a>
+          `).join('')}
+          <a class="view-all" href="posts.html">View all posts &rarr;</a>
+        `;
+      }
 
       document.getElementById('footer').innerHTML =
         `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;

@@ -7,8 +7,7 @@
   "links": {
     "github": "https://github.com/chaeunl",
     "scholar": "https://scholar.google.com/citations?user=chaeunl",
-    "linkedin": "https://www.linkedin.com/in/chaeunl",
-    "cv": "cv.pdf"
+    "linkedin": "https://www.linkedin.com/in/chaeun-lee-b27307148/"
   },
   "researchInterests": [
     {
@@ -71,7 +70,7 @@
       { "text": "<strong>Chaeun Lee</strong>, Deokki Hong, \"Method and Device for Modularized Compression of Machine Learning Model,\" Under examination." },
       { "text": "<strong>Chaeun Lee</strong>, \"Method and Device for Generating Calibration Dataset Considering Training Domain of Neural Network Model and for Optimizing Neural Network Model Using the Same,\" Under examination." },
       { "text": "<strong>Chaeun Lee</strong>, \"Apparatus for Calculating Equations of Processing Elements Using Neural Network and Method for Controlling the Same,\" Under examination." },
-      { "text": "Ki Young Choi, Jae Hyun Kim, <strong>Chae Un Lee</strong>, Joonyeon Chang, Joon Young Kwak, Jaewook Kim, \"Method for Compensating for Process Variation by Means of Activation Value Adjustment in Analog Binarized Neural Network Circuit, and System Therefor,\" US Patent Application 20210089893, 2020." }
+      { "text": "Ki Young Choi, Jae Hyun Kim, <strong>Chae Un Lee</strong>, Joonyeon Chang, Joon Young Kwak, Jaewook Kim, \"Method for Compensating for Process Variation by Means of Activation Value Adjustment in Analog Binarized Neural Network Circuit, and System Therefor,\" US Patent Application 20210089893, 2020.", "link": "https://patents.google.com/patent/US20210089893A1/en", "preview": "assets/images/publications/patent_vcam.jpg" }
     ]
   },
   "experience": [
