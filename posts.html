@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1b2a4a;
+      --dark: #1a1a1a;
+      --gray: #4a4a4a;
+      --light-gray: #888;
+      --bg: #fafafa;
+      --white: #fff;
+      --accent: #2c6fbb;
+      --border: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .site-name {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 14px 0;
+    }
+    nav .site-name:hover { color: #b0c4de; }
+    nav ul { list-style: none; display: flex; gap: 4px; }
+    nav a.nav-link {
+      display: block;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: #b0c4de;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: #fff; }
+    nav a.nav-link.active { color: #fff; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .page-header {
+      padding: 48px 0 28px;
+    }
+    .page-header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .post-list { padding-bottom: 64px; }
+    .post-item {
+      display: block;
+      padding: 20px;
+      margin-bottom: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .post-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .post-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .post-item-title { font-size: 1.05rem; font-weight: 600; color: var(--dark); }
+    .post-item-date { font-size: 0.85rem; color: var(--light-gray); white-space: nowrap; }
+    .post-item-summary { font-size: 0.9rem; color: var(--gray); }
+    .no-posts { color: var(--light-gray); font-size: 0.95rem; }
+
+    footer {
+      background: var(--navy);
+      color: #6e87a8;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      nav .nav-inner { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Chaeun Lee</a>
+      <ul>
+        <li><a href="profile.html" class="nav-link">Profile</a></li>
+        <li><a href="posts.html" class="nav-link active">Posts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header"><h1>Posts</h1></div>
+    <div class="post-list" id="post-list"></div>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script>
+    async function loadJSON(path) {
+      const res = await fetch(path);
+      return res.json();
+    }
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function render() {
+      const [profile, posts] = await Promise.all([
+        loadJSON('data/profile.json'),
+        loadJSON('data/posts.json'),
+      ]);
+      document.title = `Posts | ${profile.name}`;
+
+      const sorted = posts.sort((a, b) => b.date.localeCompare(a.date));
+      document.getElementById('post-list').innerHTML = sorted.length === 0
+        ? '<p class="no-posts">No posts yet.</p>'
+        : sorted.map(p => `
+            <a class="post-item" href="post.html?slug=${encodeURIComponent(p.slug)}">
+              <div class="post-item-header">
+                <span class="post-item-title">${escapeHTML(p.title)}</span>
+                <span class="post-item-date">${escapeHTML(p.date)}</span>
+              </div>
+              <p class="post-item-summary">${escapeHTML(p.summary)}</p>
+            </a>
+          `).join('');
+
+      document.getElementById('footer').innerHTML =
+        `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;
+    }
+    render();
+  </script>
+
+</body>
+</html>

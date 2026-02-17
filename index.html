@@ -1,4 +1,228 @@
----
-layout: home
-author_profile: true
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaeun Lee</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1b2a4a;
+      --dark: #1a1a1a;
+      --gray: #4a4a4a;
+      --light-gray: #888;
+      --bg: #fafafa;
+      --white: #fff;
+      --accent: #2c6fbb;
+      --accent-light: #e8f0fe;
+      --border: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* Nav */
+    nav {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .site-name {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 14px 0;
+    }
+    nav .site-name:hover { color: #b0c4de; }
+    nav ul { list-style: none; display: flex; gap: 4px; }
+    nav a.nav-link {
+      display: block;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: #b0c4de;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover, nav a.nav-link.active { color: #fff; }
+
+    /* Hero */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      flex-shrink: 0;
+    }
+    .hero-info h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .hero-info .tagline {
+      font-size: 1.05rem;
+      color: var(--light-gray);
+      margin-bottom: 12px;
+    }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+    .hero-links a {
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .hero-links a:hover { text-decoration: underline; }
+    .hero-links .sep { color: var(--border); }
+    .hero-links .email-text { color: var(--gray); }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section { padding: 48px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Intro text */
+    .intro {
+      font-size: 0.95rem;
+      color: var(--gray);
+      max-width: 720px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: #6e87a8;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.85rem;
+    }
+    footer a { color: #b0c4de; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero-inner { flex-direction: column; text-align: center; gap: 20px; }
+      .hero-links { justify-content: center; }
+      nav .nav-inner { flex-direction: column; gap: 0; }
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Chaeun Lee</a>
+      <ul>
+        <li><a href="profile.html" class="nav-link">Profile</a></li>
+        <li><a href="posts.html" class="nav-link">Posts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner" id="hero"></div>
+  </div>
+
+  <div class="container">
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <p class="intro">
+        I am a researcher and engineer with experience spanning AI simulation, large-scale model optimization, and hardware-aware efficient model design. My work bridges the gap between deep learning algorithms and their practical deployment on specialized hardware, from analog memory-based systems to modern NPUs. I am particularly interested in synthetic data generation with diffusion models, model quantization, and AI-driven simulation.
+      </p>
+    </section>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script>
+    async function loadJSON(path) {
+      const res = await fetch(path);
+      return res.json();
+    }
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    async function render() {
+      const profile = await loadJSON('data/profile.json');
+      document.title = profile.name;
+
+      document.getElementById('hero').innerHTML = `
+        <img src="${escapeHTML(profile.photo)}" alt="${escapeHTML(profile.name)}" class="hero-photo">
+        <div class="hero-info">
+          <h1>${escapeHTML(profile.name)}</h1>
+          <p class="tagline">${escapeHTML(profile.tagline)}</p>
+          <div class="hero-links">
+            <span class="email-text">${escapeHTML(profile.email)}</span>
+            <span class="sep">|</span>
+            <a href="${escapeHTML(profile.links.github)}" target="_blank">GitHub</a>
+            <span class="sep">|</span>
+            <a href="${escapeHTML(profile.links.scholar)}" target="_blank">Google Scholar</a>
+            <span class="sep">|</span>
+            <a href="${escapeHTML(profile.links.linkedin)}" target="_blank">LinkedIn</a>
+            <span class="sep">|</span>
+            <a href="${escapeHTML(profile.links.cv)}" target="_blank">CV</a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('footer').innerHTML =
+        `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;
+    }
+    render();
+  </script>
+
+</body>
+</html>

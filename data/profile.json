@@ -1,0 +1,118 @@
+{
+  "name": "Chaeun Lee",
+  "tagline": "AI Researcher & Engineer",
+  "email": "chaeunl7765 AT gmail.com",
+  "location": "Republic of Korea",
+  "photo": "assets/images/chaeun.jpg",
+  "links": {
+    "github": "https://github.com/chaeunl",
+    "scholar": "https://scholar.google.com/citations?user=chaeunl",
+    "linkedin": "https://www.linkedin.com/in/chaeunl",
+    "cv": "cv.pdf"
+  },
+  "researchInterests": [
+    {
+      "title": "AI Simulation",
+      "period": "Jun. 2019 -",
+      "description": "Designing accurate and fast simulation environments for analog memory-based circuit systems. Proposed neural architectures that replace iterative solvers with one-step inference. Currently leading research on diffusion model-based synthetic data generation conditioned on discriminative vision perception models (model-agnostic data generation)."
+    },
+    {
+      "title": "Large-scale Models",
+      "period": "Nov. 2021 -",
+      "description": "Experience finetuning multi-task foundation models at NAVER Clova. At SAPEON/Rebellions, investigated LLMs and designed frontend for transformer acceleration tools. Focused on diffusion model-based architectures for synthetic data generation research."
+    },
+    {
+      "title": "Lightweight & Efficient Models",
+      "period": "May. 2017 -",
+      "description": "From spiking neural networks to quantization and its implementation with emerging analog memory devices. Conducted co-optimization research between algorithms and hardware implementations. Developed quantization toolkit for NPUs and research on synthetic data for calibration."
+    }
+  ],
+  "education": [
+    {
+      "school": "Korea University Institute for Continuing Education",
+      "degree": "Bachelor of Mathematics (45/48 credits earned)",
+      "location": "Seoul, Republic of Korea",
+      "period": "Sep. 2021 -"
+    },
+    {
+      "school": "Seoul National University",
+      "degree": "Master of Electrical Engineering and Computer Science (Prof. Kiyoung Choi)",
+      "location": "Seoul, Republic of Korea",
+      "period": "Mar. 2018 - Feb. 2020",
+      "thesis": "Design and Optimization for Energy Efficient and Variation Resilient RRAM-based Neural Networks"
+    },
+    {
+      "school": "Seoul National University",
+      "degree": "Bachelor of Electrical Engineering and Computer Science",
+      "location": "Seoul, Republic of Korea",
+      "period": "Mar. 2011 - Aug. 2017",
+      "thesis": "Analyzing Neural Networks System of Caenorhabditis Elegans using Modularity Algorithms"
+    }
+  ],
+  "publications": {
+    "preprints": [
+      "[A1] <strong>Chaeun Lee</strong> and Seyoung Kim, \"SEMULATOR: Emulating the Dynamics of Crossbar Array-based Analog Neural System with Regression Neural Network,\" arXiv, 2021."
+    ],
+    "journals": [
+      "[J2] <strong>Chaeun Lee</strong>, Kyungmi Noh, Wonjae Ji, Tayfun Gokmen and Seyoung Kim, \"Impact of Asymmetric Weight Update on Neural Networks Training with Tiki-taka Algorithm,\" <em>Frontiers in Neuroscience</em>, 2022 (IF=4.7).",
+      "[J1] Hyunjung Kwak, Chuljun Lee, <strong>Chaeun Lee</strong>, Kyungmi Noh and Seyoung Kim, \"Experimental Measurement of Ungated Channel Region Conductance in a Multi-terminal, Metal Oxide-based ECRAM,\" <em>Semiconductor Science and Technology</em>, 2021 (IF=2.36)."
+    ],
+    "conferences": [
+      "[C8] Jiwoong Park*, <strong>Chaeun Lee</strong>*, Yongseok Choi, Sein Park, Deokki Hong, and Jungwook Choi, \"Enhancing Generalization in Data-free Quantization via Mixup-class Prompting,\" <em>ICCV BiVision Workshop (ICCVW)</em>, 2025 (*=equal contribution).",
+      "[C7] Jiwoong Park, <strong>Chaeun Lee</strong>, Yongseok Choi, and Jungwook Choi, \"Data-scarce quantization using Stable Diffusion,\" <em>Autumn Annual Conference of IEIE</em>, 2024 (domestic).",
+      "[C6] <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"An RRAM-based Analog Neuron Design for the Weighted Spiking Neural Network,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.",
+      "[C5] <strong>Chaeun Lee</strong>, Jaehyun Kim, Jihun Kim, Jaehyun Kim, and Kiyoung Choi, \"Fast Simulation Method for Analog Deep Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.",
+      "[C4] Jaehyun Kim*, <strong>Chaeun Lee</strong>*, Jihun Kim, Yumin Kim, Cheol Seong Hwang and Kiyoung Choi, \"VCAM: Variation Compensation Technique through Activation Matching,\" <em>International Symposium on Low Power Electronics and Design (ISLPED)</em>, 2019 (*=equal contribution).",
+      "[C3] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Deep Neural Network Training with Random Search,\" <em>SoC Conference</em>, 2019 (domestic).",
+      "[C2] Seonghyun Jeong, <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"A Biologically Plausible Deep Learning Model with DBN and A Shallow Classifier,\" <em>Institute of Semiconductor Engineers Conference</em>, 2018 (domestic).",
+      "[C1] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2018."
+    ],
+    "patents": [
+      "[P4] <strong>Chaeun Lee</strong>, Deokki Hong, \"Method and Device for Modularized Compression of Machine Learning Model,\" Under examination.",
+      "[P3] <strong>Chaeun Lee</strong>, \"Method and Device for Generating Calibration Dataset Considering Training Domain of Neural Network Model and for Optimizing Neural Network Model Using the Same,\" Under examination.",
+      "[P2] <strong>Chaeun Lee</strong>, \"Apparatus for Calculating Equations of Processing Elements Using Neural Network and Method for Controlling the Same,\" Under examination.",
+      "[P1] Ki Young Choi, Jae Hyun Kim, <strong>Chae Un Lee</strong>, Joonyeon Chang, Joon Young Kwak, Jaewook Kim, \"Method for Compensating for Process Variation by Means of Activation Value Adjustment in Analog Binarized Neural Network Circuit, and System Therefor,\" US Patent Application 20210089893, 2020."
+    ]
+  },
+  "experience": [
+    {
+      "title": "NPU/GPU Performance Engineer at Rebellions (M&A SAPEON Inc.)",
+      "period": "Dec. 2024 - Jul. 2025",
+      "description": "Evaluated NPU/GPU performance for LLM serving frameworks and developed NPU applications. Conducted research on synthetic data generation using text-guided diffusion models."
+    },
+    {
+      "title": "Research and Software Engineer at SAPEON Inc.",
+      "period": "May. 2022 - Dec. 2024",
+      "description": "Developed quantization toolkit based on PyTorch with C++ and CUDA kernels for NPUs. Led LLM acceleration tool development focusing on quantization and kernel optimization."
+    },
+    {
+      "title": "Internship at NAVER Clova",
+      "period": "Jul. 2021 - Jan. 2022",
+      "description": "Built document classification neural networks in OCR team. Focused on image retrieval with metric learning for open-set classification. Participated in big-model multi-task learning project."
+    },
+    {
+      "title": "Research Associate at POSTECH",
+      "period": "Sep. 2020 - May. 2021",
+      "description": "Conducted research on optimization theory for analog circuit-based neural networks using resistive memory devices. Analyzed on-device learning algorithms and continued simulator development."
+    },
+    {
+      "title": "Research Assistant at SNU/ISRC",
+      "period": "May. 2017 - Aug. 2020",
+      "description": "Research on quantized neural networks, spiking neural networks, curriculum learning, and distributed learning at Design Automation Lab. Developed simulator for analog circuit-based neural networks."
+    }
+  ],
+  "talks": [
+    "[T4] <strong>Chaeun Lee</strong>, \"Towards Efficient AI Agents: Models, Quantization, and Tools\", Invited talk at Supergate Inc., 2025.",
+    "[T3] <strong>Chaeun Lee</strong>, \"Synthetic data generation with text-to-image diffusion models\", Invited Talk at Hanyang Univ., 2025.",
+    "[T2] <strong>Chaeun Lee</strong>, \"Recent advances in quantization for deep learning models from algorithms to system level\", <strong>Main Tutorial</strong> at <em>International Conference on Electronics, Information, and Communication (ICEIC)</em>, 2024.",
+    "[T1] <strong>Chaeun Lee</strong>, \"Statistical Modeling-based Simulators for Analog Neural Networks\", <strong>Main Tutorial</strong> at <em>International SoC Design Conference (ISOCC)</em>, 2021."
+  ],
+  "awards": [
+    "Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <strong>Best Paper Award granted by SK Hynix</strong> at International SoC Design Conference (ISOCC), 2018."
+  ],
+  "skills": [
+    { "category": "Languages", "items": ["English (TOEFL iBT 94)", "Korean (Native)"] },
+    { "category": "Programming", "items": ["Python", "PyTorch", "TensorFlow", "ONNX", "C/C++", "CUDA", "Linux"] },
+    { "category": "Academic Background", "items": ["Mathematics", "Electronics", "Computer Science", "Optimization", "Neuroscience"] }
+  ]
+}
