@@ -25,6 +25,7 @@
       line-height: 1.7;
     }
 
+    /* Main nav */
     nav {
       background: var(--navy);
       position: sticky;
@@ -62,51 +63,57 @@
     nav a.nav-link:hover { color: #fff; }
     nav a.nav-link.active { color: #fff; }
 
+    /* Sub-nav */
+    .sub-nav {
+      background: var(--accent);
+      position: sticky;
+      top: 48px;
+      z-index: 99;
+    }
+    .sub-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .sub-nav a {
+      display: block;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .sub-nav a:hover, .sub-nav a.active {
+      color: #fff;
+    }
+
+    /* Container */
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Sub-tabs */
-    .sub-tabs {
-      display: flex;
-      gap: 4px;
-      padding: 40px 0 0;
-      flex-wrap: wrap;
+    .pub-section {
+      padding: 40px 0;
+      scroll-margin-top: 100px;
     }
-    .sub-tab {
-      padding: 8px 18px;
-      border: 1px solid var(--border);
-      border-bottom: none;
-      border-radius: 6px 6px 0 0;
-      background: var(--white);
-      color: var(--light-gray);
-      font-size: 0.85rem;
-      font-weight: 600;
+    .pub-section + .pub-section { border-top: 1px solid var(--border); }
+    .pub-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: color 0.2s, background 0.2s;
     }
-    .sub-tab:hover { color: var(--accent); }
-    .sub-tab.active {
-      color: var(--accent);
-      background: var(--bg);
-      border-bottom: 1px solid var(--bg);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Tab content */
-    .tab-content {
-      border-top: 1px solid var(--border);
-      padding: 28px 0 48px;
-      margin-top: -1px;
-    }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
     .pub-list {
       list-style: none;
       padding: 0;
@@ -129,7 +136,9 @@
 
     @media (max-width: 640px) {
       nav .nav-inner { flex-direction: column; gap: 0; }
-      .sub-tab { font-size: 0.75rem; padding: 6px 12px; }
+      .sub-nav { top: 82px; }
+      .sub-nav a { padding: 8px 14px; font-size: 0.75rem; }
+      .pub-section { scroll-margin-top: 140px; }
     }
 
     html { scroll-behavior: smooth; }
@@ -148,10 +157,11 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="sub-tabs" id="sub-tabs"></div>
-    <div class="tab-content" id="tab-content"></div>
+  <div class="sub-nav">
+    <div class="sub-nav-inner" id="sub-nav"></div>
   </div>
+
+  <div class="container" id="content"></div>
 
   <footer id="footer"></footer>
 
@@ -171,42 +181,42 @@
       document.title = `Publications | ${profile.name}`;
 
       const pubs = profile.publications;
-      const groups = [
-        { key: 'preprints', label: 'Preprints', items: pubs.preprints },
-        { key: 'journals', label: 'Journals', items: pubs.journals },
-        { key: 'conferences', label: 'Conferences', items: pubs.conferences },
-        { key: 'patents', label: 'Patents', items: pubs.patents },
-        { key: 'talks', label: 'Talks', items: profile.talks },
+      const sections = [
+        { id: 'preprints', label: 'Preprints', items: pubs.preprints },
+        { id: 'journals', label: 'Journals', items: pubs.journals },
+        { id: 'conferences', label: 'Conferences', items: pubs.conferences },
+        { id: 'patents', label: 'Patents', items: pubs.patents },
+        { id: 'talks', label: 'Talks', items: profile.talks },
       ];
 
-      // Check URL hash for initial tab
-      const hash = window.location.hash.replace('#', '');
-      const initialTab = groups.find(g => g.key === hash) ? hash : groups[0].key;
-
-      // Render sub-tabs
-      document.getElementById('sub-tabs').innerHTML = groups.map(g =>
-        `<div class="sub-tab${g.key === initialTab ? ' active' : ''}" data-tab="${g.key}">${g.label}</div>`
+      // Sub-nav
+      document.getElementById('sub-nav').innerHTML = sections.map(s =>
+        `<a href="#${s.id}">${s.label}</a>`
       ).join('');
 
-      // Render tab panels
-      document.getElementById('tab-content').innerHTML = groups.map(g => `
-        <div class="tab-panel${g.key === initialTab ? ' active' : ''}" id="panel-${g.key}">
+      // Content
+      document.getElementById('content').innerHTML = sections.map(s => `
+        <div class="pub-section" id="${s.id}">
+          <h2>${s.label}</h2>
           <ul class="pub-list">
-            ${g.items.map(item => `<li>${item}</li>`).join('')}
+            ${s.items.map(item => `<li>${item}</li>`).join('')}
           </ul>
         </div>
       `).join('');
 
-      // Tab switching
-      document.querySelectorAll('.sub-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
-          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-          tab.classList.add('active');
-          document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-          history.replaceState(null, '', '#' + tab.dataset.tab);
+      // Highlight active sub-nav on scroll
+      const links = document.querySelectorAll('.sub-nav a');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const link = document.querySelector(`.sub-nav a[href="#${entry.target.id}"]`);
+            if (link) link.classList.add('active');
+          }
         });
-      });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(s => observer.observe(document.getElementById(s.id)));
 
       document.getElementById('footer').innerHTML =
         `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;
