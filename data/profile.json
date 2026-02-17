@@ -51,27 +51,27 @@
   ],
   "publications": {
     "preprints": [
-      "[A1] <strong>Chaeun Lee</strong> and Seyoung Kim, \"SEMULATOR: Emulating the Dynamics of Crossbar Array-based Analog Neural System with Regression Neural Network,\" arXiv, 2021."
+      { "text": "[A1] <strong>Chaeun Lee</strong> and Seyoung Kim, \"SEMULATOR: Emulating the Dynamics of Crossbar Array-based Analog Neural System with Regression Neural Network,\" arXiv, 2021.", "preview": "assets/images/publications/semulator.pdf" }
     ],
     "journals": [
-      "[J2] <strong>Chaeun Lee</strong>, Kyungmi Noh, Wonjae Ji, Tayfun Gokmen and Seyoung Kim, \"Impact of Asymmetric Weight Update on Neural Networks Training with Tiki-taka Algorithm,\" <em>Frontiers in Neuroscience</em>, 2022 (IF=4.7).",
-      "[J1] Hyunjung Kwak, Chuljun Lee, <strong>Chaeun Lee</strong>, Kyungmi Noh and Seyoung Kim, \"Experimental Measurement of Ungated Channel Region Conductance in a Multi-terminal, Metal Oxide-based ECRAM,\" <em>Semiconductor Science and Technology</em>, 2021 (IF=2.36)."
+      { "text": "[J2] <strong>Chaeun Lee</strong>, Kyungmi Noh, Wonjae Ji, Tayfun Gokmen and Seyoung Kim, \"Impact of Asymmetric Weight Update on Neural Networks Training with Tiki-taka Algorithm,\" <em>Frontiers in Neuroscience</em>, 2022 (IF=4.7).", "preview": "assets/images/publications/impact_of.webp" },
+      { "text": "[J1] Hyunjung Kwak, Chuljun Lee, <strong>Chaeun Lee</strong>, Kyungmi Noh and Seyoung Kim, \"Experimental Measurement of Ungated Channel Region Conductance in a Multi-terminal, Metal Oxide-based ECRAM,\" <em>Semiconductor Science and Technology</em>, 2021 (IF=2.36)." }
     ],
     "conferences": [
-      "[C8] Jiwoong Park*, <strong>Chaeun Lee</strong>*, Yongseok Choi, Sein Park, Deokki Hong, and Jungwook Choi, \"Enhancing Generalization in Data-free Quantization via Mixup-class Prompting,\" <em>ICCV BiVision Workshop (ICCVW)</em>, 2025 (*=equal contribution).",
-      "[C7] Jiwoong Park, <strong>Chaeun Lee</strong>, Yongseok Choi, and Jungwook Choi, \"Data-scarce quantization using Stable Diffusion,\" <em>Autumn Annual Conference of IEIE</em>, 2024 (domestic).",
-      "[C6] <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"An RRAM-based Analog Neuron Design for the Weighted Spiking Neural Network,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.",
-      "[C5] <strong>Chaeun Lee</strong>, Jaehyun Kim, Jihun Kim, Jaehyun Kim, and Kiyoung Choi, \"Fast Simulation Method for Analog Deep Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2019.",
-      "[C4] Jaehyun Kim*, <strong>Chaeun Lee</strong>*, Jihun Kim, Yumin Kim, Cheol Seong Hwang and Kiyoung Choi, \"VCAM: Variation Compensation Technique through Activation Matching,\" <em>International Symposium on Low Power Electronics and Design (ISLPED)</em>, 2019 (*=equal contribution).",
-      "[C3] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Deep Neural Network Training with Random Search,\" <em>SoC Conference</em>, 2019 (domestic).",
-      "[C2] Seonghyun Jeong, <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"A Biologically Plausible Deep Learning Model with DBN and A Shallow Classifier,\" <em>Institute of Semiconductor Engineers Conference</em>, 2018 (domestic).",
-      "[C1] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2018."
+      { "text": "[C8] Jiwoong Park*, <strong>Chaeun Lee</strong>*, Yongseok Choi, Sein Park, Deokki Hong, and Jungwook Choi, \"Enhancing Generalization in Data-free Quantization via Mixup-class Prompting,\" <em>ICCV BiVision Workshop (ICCVW)</em>, 2025 (*=equal contribution).", "preview": "assets/images/publications/enhancing.png" },
+      { "text": "[C7] Jiwoong Park, <strong>Chaeun Lee</strong>, Yongseok Choi, and Jungwook Choi, \"Data-scarce quantization using Stable Diffusion,\" <em>Autumn Annual Conference of IEIE</em>, 2024 (domestic)." },
+      { "text": "[C6] <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"An RRAM-based Analog Neuron Design for the Weighted Spiking Neural Network,\" <em>International SoC Design Conference (ISOCC)</em>, 2019." },
+      { "text": "[C5] <strong>Chaeun Lee</strong>, Jaehyun Kim, Jihun Kim, Jaehyun Kim, and Kiyoung Choi, \"Fast Simulation Method for Analog Deep Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2019." },
+      { "text": "[C4] Jaehyun Kim*, <strong>Chaeun Lee</strong>*, Jihun Kim, Yumin Kim, Cheol Seong Hwang and Kiyoung Choi, \"VCAM: Variation Compensation Technique through Activation Matching,\" <em>International Symposium on Low Power Electronics and Design (ISLPED)</em>, 2019 (*=equal contribution).", "preview": "assets/images/publications/vcam.jpg" },
+      { "text": "[C3] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Deep Neural Network Training with Random Search,\" <em>SoC Conference</em>, 2019 (domestic)." },
+      { "text": "[C2] Seonghyun Jeong, <strong>Chaeun Lee</strong>, Jaehyun Kim, and Kiyoung Choi, \"A Biologically Plausible Deep Learning Model with DBN and A Shallow Classifier,\" <em>Institute of Semiconductor Engineers Conference</em>, 2018 (domestic)." },
+      { "text": "[C1] Jaehyun Kim, <strong>Chaeun Lee</strong>, and Kiyoung Choi, \"Energy Efficient Analog Synapse/Neuron Circuit for Binarized Neural Networks,\" <em>International SoC Design Conference (ISOCC)</em>, 2018." }
     ],
     "patents": [
-      "[P4] <strong>Chaeun Lee</strong>, Deokki Hong, \"Method and Device for Modularized Compression of Machine Learning Model,\" Under examination.",
-      "[P3] <strong>Chaeun Lee</strong>, \"Method and Device for Generating Calibration Dataset Considering Training Domain of Neural Network Model and for Optimizing Neural Network Model Using the Same,\" Under examination.",
-      "[P2] <strong>Chaeun Lee</strong>, \"Apparatus for Calculating Equations of Processing Elements Using Neural Network and Method for Controlling the Same,\" Under examination.",
-      "[P1] Ki Young Choi, Jae Hyun Kim, <strong>Chae Un Lee</strong>, Joonyeon Chang, Joon Young Kwak, Jaewook Kim, \"Method for Compensating for Process Variation by Means of Activation Value Adjustment in Analog Binarized Neural Network Circuit, and System Therefor,\" US Patent Application 20210089893, 2020."
+      { "text": "[P4] <strong>Chaeun Lee</strong>, Deokki Hong, \"Method and Device for Modularized Compression of Machine Learning Model,\" Under examination." },
+      { "text": "[P3] <strong>Chaeun Lee</strong>, \"Method and Device for Generating Calibration Dataset Considering Training Domain of Neural Network Model and for Optimizing Neural Network Model Using the Same,\" Under examination." },
+      { "text": "[P2] <strong>Chaeun Lee</strong>, \"Apparatus for Calculating Equations of Processing Elements Using Neural Network and Method for Controlling the Same,\" Under examination." },
+      { "text": "[P1] Ki Young Choi, Jae Hyun Kim, <strong>Chae Un Lee</strong>, Joonyeon Chang, Joon Young Kwak, Jaewook Kim, \"Method for Compensating for Process Variation by Means of Activation Value Adjustment in Analog Binarized Neural Network Circuit, and System Therefor,\" US Patent Application 20210089893, 2020." }
     ]
   },
   "experience": [
