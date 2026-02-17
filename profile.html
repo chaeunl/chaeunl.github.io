@@ -265,6 +265,7 @@
       <a href="index.html" class="site-name">Chaeun Lee</a>
       <ul>
         <li><a href="profile.html" class="nav-link active">Profile</a></li>
+        <li><a href="publications.html" class="nav-link">Publications</a></li>
         <li><a href="posts.html" class="nav-link">Posts</a></li>
       </ul>
     </div>
@@ -273,7 +274,6 @@
   <div class="container">
     <section id="research-interests"></section>
     <section id="education"></section>
-    <section id="publications"></section>
     <section id="experience"></section>
     <section id="talks"></section>
     <section id="awards"></section>
@@ -323,25 +323,6 @@
             <div class="edu-degree">${escapeHTML(edu.degree)}</div>
             <div class="edu-location">${escapeHTML(edu.location)}</div>
             ${edu.thesis ? `<div class="edu-thesis">Thesis: ${escapeHTML(edu.thesis)}</div>` : ''}
-          </div>
-        `).join('')}
-      `;
-
-      // Publications
-      const pubs = profile.publications;
-      document.getElementById('publications').innerHTML = `
-        <h2 class="section-title">Publications & Patents</h2>
-        ${[
-          { label: 'Preprints', items: pubs.preprints },
-          { label: 'Journals', items: pubs.journals },
-          { label: 'Conferences', items: pubs.conferences },
-          { label: 'Patents', items: pubs.patents },
-        ].map(group => `
-          <div class="pub-group">
-            <h3>${group.label}</h3>
-            <ul class="pub-list">
-              ${group.items.map(item => `<li>${item}</li>`).join('')}
-            </ul>
           </div>
         `).join('')}
       `;
