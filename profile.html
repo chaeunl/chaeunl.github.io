@@ -275,7 +275,6 @@
     <section id="research-interests"></section>
     <section id="education"></section>
     <section id="experience"></section>
-    <section id="talks"></section>
     <section id="awards"></section>
     <section id="skills"></section>
   </div>
@@ -339,14 +338,6 @@
             <p>${escapeHTML(exp.description)}</p>
           </div>
         `).join('')}
-      `;
-
-      // Talks
-      document.getElementById('talks').innerHTML = `
-        <h2 class="section-title">Talks</h2>
-        <ul class="talk-list">
-          ${profile.talks.map(t => `<li>${t}</li>`).join('')}
-        </ul>
       `;
 
       // Awards

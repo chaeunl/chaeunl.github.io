@@ -67,27 +67,46 @@
       margin: 0 auto;
       padding: 0 24px;
     }
-    section { padding: 48px 0; }
-    section + section { border-top: 1px solid var(--border); }
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
-    .pub-group { margin-bottom: 24px; }
-    .pub-group:last-child { margin-bottom: 0; }
-    .pub-group h3 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 10px;
+    /* Sub-tabs */
+    .sub-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 40px 0 0;
+      flex-wrap: wrap;
+    }
+    .sub-tab {
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      background: var(--white);
+      color: var(--light-gray);
+      font-size: 0.85rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
     }
+    .sub-tab:hover { color: var(--accent); }
+    .sub-tab.active {
+      color: var(--accent);
+      background: var(--bg);
+      border-bottom: 1px solid var(--bg);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tab content */
+    .tab-content {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 48px;
+      margin-top: -1px;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
     .pub-list {
       list-style: none;
       padding: 0;
@@ -95,7 +114,7 @@
     .pub-list li {
       font-size: 0.9rem;
       color: var(--gray);
-      padding: 8px 0;
+      padding: 10px 0;
       border-bottom: 1px solid #f0f0f0;
     }
     .pub-list li:last-child { border-bottom: none; }
@@ -110,6 +129,7 @@
 
     @media (max-width: 640px) {
       nav .nav-inner { flex-direction: column; gap: 0; }
+      .sub-tab { font-size: 0.75rem; padding: 6px 12px; }
     }
 
     html { scroll-behavior: smooth; }
@@ -129,7 +149,8 @@
   </nav>
 
   <div class="container">
-    <section id="publications"></section>
+    <div class="sub-tabs" id="sub-tabs"></div>
+    <div class="tab-content" id="tab-content"></div>
   </div>
 
   <footer id="footer"></footer>
@@ -150,22 +171,42 @@
       document.title = `Publications | ${profile.name}`;
 
       const pubs = profile.publications;
-      document.getElementById('publications').innerHTML = `
-        <h2 class="section-title">Publications & Patents</h2>
-        ${[
-          { label: 'Preprints', items: pubs.preprints },
-          { label: 'Journals', items: pubs.journals },
-          { label: 'Conferences', items: pubs.conferences },
-          { label: 'Patents', items: pubs.patents },
-        ].map(group => `
-          <div class="pub-group">
-            <h3>${group.label}</h3>
-            <ul class="pub-list">
-              ${group.items.map(item => `<li>${item}</li>`).join('')}
-            </ul>
-          </div>
-        `).join('')}
-      `;
+      const groups = [
+        { key: 'preprints', label: 'Preprints', items: pubs.preprints },
+        { key: 'journals', label: 'Journals', items: pubs.journals },
+        { key: 'conferences', label: 'Conferences', items: pubs.conferences },
+        { key: 'patents', label: 'Patents', items: pubs.patents },
+        { key: 'talks', label: 'Talks', items: profile.talks },
+      ];
+
+      // Check URL hash for initial tab
+      const hash = window.location.hash.replace('#', '');
+      const initialTab = groups.find(g => g.key === hash) ? hash : groups[0].key;
+
+      // Render sub-tabs
+      document.getElementById('sub-tabs').innerHTML = groups.map(g =>
+        `<div class="sub-tab${g.key === initialTab ? ' active' : ''}" data-tab="${g.key}">${g.label}</div>`
+      ).join('');
+
+      // Render tab panels
+      document.getElementById('tab-content').innerHTML = groups.map(g => `
+        <div class="tab-panel${g.key === initialTab ? ' active' : ''}" id="panel-${g.key}">
+          <ul class="pub-list">
+            ${g.items.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+
+      // Tab switching
+      document.querySelectorAll('.sub-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+          history.replaceState(null, '', '#' + tab.dataset.tab);
+        });
+      });
 
       document.getElementById('footer').innerHTML =
         `&copy; ${new Date().getFullYear()} ${escapeHTML(profile.name)}`;
